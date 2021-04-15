@@ -1,0 +1,5 @@
+.idea
+target
+TestCasesScreenshots
+Guru99 Tests.iml
+selenium_server/startFirefoxNode.bat
