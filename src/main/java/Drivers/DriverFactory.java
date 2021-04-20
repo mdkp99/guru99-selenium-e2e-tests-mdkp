@@ -3,6 +3,7 @@ package Drivers;
 import Utilities.PropertyManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -17,7 +18,7 @@ public class DriverFactory {
 
         return switch (browserType) {
             case "CHROME" -> getChromeDriver();
-//          case "FIREFOX" -> getFirefoxDriver();
+            case "FIREFOX" -> getFirefoxDriver();
             default -> throw new IllegalArgumentException("Provided browser does not exist");
         };
     }
@@ -28,9 +29,9 @@ public class DriverFactory {
         return driver;
     }
 
-//    private WebDriver getFirefoxDriver() throws MalformedURLException {
-//        FirefoxOptions options = new FirefoxOptions();
-//        driver = new RemoteWebDriver(new URL(hubUrl), options);
-//        return driver;
-//    }
+    private WebDriver getFirefoxDriver() throws MalformedURLException {
+        FirefoxOptions options = new FirefoxOptions();
+        driver = new RemoteWebDriver(new URL(hubUrl), options);
+        return driver;
+    }
 }
