@@ -1,26 +1,9 @@
 {
   "capabilities":
   [
-    {
-      "browserName": "firefox",
-      "maxInstances": 4
-    },   
   {
       "browserName": "chrome",
-      "maxInstances": 3,
-      "version": "66"    
-    },
-    {
-      "browserName": "operablink",
       "maxInstances": 3
-    }
-  {
-      "browserName": "MicrosoftEdge",
-      "maxInstances": 1
-    }
-  {
-      "browserName": "internet explorer",
-      "maxInstances": 1
     }
   ],  
   "maxSession": 5,
