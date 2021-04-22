@@ -14,7 +14,7 @@ public class ProductsListPage extends BasePage {
 
     private final By sortTypeLocator = By.cssSelector("select[title=\"Sort By\"]");
     private final By productNameLocator = By.cssSelector("[class=\"product-name\"]");
-    private final By productPriceLocator = By.cssSelector(".price");
+    private final By productPriceLocator = By.xpath("//*[@id=\"product-price-1\"]/span");
     private final By sortingDirectionLocator = By.cssSelector(".sort-by-switcher");
     private final By numberOfItemsInList = By.cssSelector("small");
 
@@ -87,12 +87,12 @@ public class ProductsListPage extends BasePage {
             // Add products prices to "originalPricesList" if there is no discount price
             for (WebElement productPrice : productsPricesList) {
                 // Check if exist any discount prices in products list
-                if (driver.findElement(productPriceLocator).getAttribute("id").contains("old-price")) {
+                if (!driver.findElement(productPriceLocator).getAttribute("id").contains("old-price")) {
+                    originalPricesList.add(productPrice.getText());
+                } else {
                     // do nothing
 
                     // Else add each product price to "originalPricesList" list
-                } else {
-                    originalPricesList.add(productPrice.getText());
                 }
             }
 
@@ -138,7 +138,7 @@ public class ProductsListPage extends BasePage {
 
     // Method return product price of received xPath
     public String getProductPrice(String productPriceXPath) {
-        return driver.findElement(By.xpath(productPriceXPath)).getText();
+        return driver.findElement(By.xpath(String.valueOf(productPriceLocator))).getText();
     }
 
     // Method return new product detail page of received xPath/**/

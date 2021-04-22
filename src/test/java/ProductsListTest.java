@@ -48,7 +48,7 @@ public class ProductsListTest extends BaseTest {
 
         String productDetailPagePrice = productsDetailPage.getProductPrice();
 
-        Assertions.assertEquals(productDetailPagePrice, productsListPagePrice,"Expected prices are invalid.");
+        Assertions.assertEquals(productDetailPagePrice, productsListPagePrice, "Expected prices are invalid.");
     }
 }
 
