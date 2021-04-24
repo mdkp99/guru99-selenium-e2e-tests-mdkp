@@ -136,14 +136,14 @@ public class ProductsListPage extends BasePage {
         return Integer.parseInt(numbersOfItems);
     }
 
-    // Method return product price of received xPath
-    public String getProductPrice(String productPriceXPath) {
-        return driver.findElement(By.xpath(String.valueOf(productPriceLocator))).getText();
+    // Method return product price of received product id
+    public String getProductPrice(int productID) {
+        return driver.findElement(By.cssSelector("span[id=\"product-price-"+productID+"\"]")).getText();
     }
 
-    // Method return new product detail page of received xPath/**/
-    public ProductsDetailPage goToProductDetailPage(String xPathForDetailPage) {
-        driver.findElement(By.xpath(xPathForDetailPage)).click();
+    // Method return ProductDetailPage of received product name
+    public ProductsDetailPage goToProductDetailPage(String productName) {
+        driver.findElements(By.cssSelector("a[title=\""+productName+"\"]"));
         return new ProductsDetailPage(driver);
     }
 }

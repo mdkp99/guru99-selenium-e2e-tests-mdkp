@@ -11,9 +11,7 @@ public class ProductsListTest extends BaseTest {
     String xPathForFirstProduct = "//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[1]/div/div[3]/ul/li[2]/a";
     String xPathForSecondProduct = "//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[2]/div/div[3]/ul/li[2]/a";
 
-    // Prices
-    String SonyXPeriaPriceXPath = "//*[@id=\"top\"]/body/div[1]/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[1]/div/h2/a";
-    String SonyXPeriaDetailPageXPath = "//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[1]/div/h2/a";
+
 
     @Test //TC1
     public void itemsCanBeSortedByNameInProductsListPageTest() {
@@ -43,8 +41,8 @@ public class ProductsListTest extends BaseTest {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         ProductsDetailPage productsDetailPage = new ProductsDetailPage(driver);
 
-        String productsListPagePrice = productsListPage.header.goToMobileCategory().getProductPrice(SonyXPeriaPriceXPath);
-        productsListPage.goToProductDetailPage(SonyXPeriaDetailPageXPath);
+        String productsListPagePrice = productsListPage.header.goToMobileCategory().getProductPrice(1);
+        productsListPage.goToProductDetailPage("Sony Xperia");
 
         String productDetailPagePrice = productsDetailPage.getProductPrice();
 
