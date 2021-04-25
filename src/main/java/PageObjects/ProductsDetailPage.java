@@ -8,8 +8,8 @@ public class ProductsDetailPage extends BasePage {
 
     private static final By productPriceLocator = By.cssSelector(".price");
     private static final By quantityLocator = By.cssSelector("#qty");
-    private static final By addToCartButtonLocator = By.cssSelector("button[class=\"button\"]");
-    private static final By productNameLocator = By.cssSelector("span[class=\"h1 selectorgadget_rejected\"]");
+    private static final By addToCartButtonLocator = By.cssSelector("button[class=\"button btn-cart\"]");
+    private static final By productNameLocator = By.cssSelector("span[class=\"h1\"]");
     private static final By addNewReviewLocator = By.xpath("//*[@id=\"product_addtocart_form\"]/div[3]/div[3]/div/p/a[2]");
     private static final By thoughtsTextareaLocator = By.cssSelector("textarea[id=\"review_field\"]");
     private static final By summaryTextareaLocator = By.cssSelector("input[id=\"summary_field\"]");
@@ -28,6 +28,7 @@ public class ProductsDetailPage extends BasePage {
 
     // Method add product to cart in product detail page
     public CartPage addProductToCart(String quantity) {
+        driver.findElement(quantityLocator).clear();
         driver.findElement(quantityLocator).sendKeys(quantity);
         driver.findElement(addToCartButtonLocator).click();
         return new CartPage(driver);

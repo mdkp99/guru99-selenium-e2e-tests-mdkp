@@ -11,7 +11,6 @@ public class ProductsDetailTest extends BaseTest {
     @Test //TC1
     public void itemCanBeAddedToCartFromProductDetailPageTest() {
         ProductsDetailPage productsDetailPage = new ProductsDetailPage(driver);
-        String expectedURL = "http://live.demoguru99.com/index.php/checkout/cart/";
 
         driver.get(productDetailURL);
         String productName = productsDetailPage.getProductName();
