@@ -1,8 +1,8 @@
 import Drivers.DriverFactory;
 import Utilities.PropertyManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
@@ -15,7 +15,7 @@ public abstract class BaseTest {
     private final String browserType = PropertyManager.getInstance().getBrowserType();
 
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp() throws MalformedURLException {
         DriverFactory driverFactory = new DriverFactory();
         driver = (RemoteWebDriver) driverFactory.create(browserType);
@@ -23,7 +23,7 @@ public abstract class BaseTest {
         driver.get(baseURL);
     }
 
-    @AfterEach
+    @AfterMethod
     public void tearDownDriver() {
         driver.quit();
     }

@@ -1,6 +1,7 @@
 import PageObjects.ProductsDetailPage;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 
 public class ProductsDetailTest extends BaseTest {
 
@@ -16,7 +17,7 @@ public class ProductsDetailTest extends BaseTest {
         String productName = productsDetailPage.getProductName();
 
         boolean productAddedProperly = productsDetailPage.addProductToCart("2").checkIfProductWasAddedToCartProperly(productName);
-        Assertions.assertTrue(productAddedProperly, "Product was not added properly to card.");
+        Assert.assertTrue(productAddedProperly, "Product was not added properly to card.");
     }
 
     @Test //TC2

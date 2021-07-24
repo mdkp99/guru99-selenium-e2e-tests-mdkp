@@ -1,7 +1,7 @@
 import PageObjects.ProductsDetailPage;
 import PageObjects.ProductsListPage;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class ProductsListTest extends BaseTest {
 
@@ -17,14 +17,14 @@ public class ProductsListTest extends BaseTest {
     public void itemsCanBeSortedByNameInProductsListPageTest() {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         boolean areSortedProperly = productsListPage.header.goToMobileCategory().checkIfProductsAreSortedProperly("asc", "Name");
-        Assertions.assertTrue(areSortedProperly, "Products are not sorted properly.");
+        Assert.assertTrue(areSortedProperly, "Products are not sorted properly.");
     }
 
     @Test //TC2
     public void itemsCanBeSortedByPriceInProductsListPageTest() {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         boolean areSortedProperly = productsListPage.header.goToMobileCategory().checkIfProductsAreSortedProperly("asc", "Price");
-        Assertions.assertTrue(areSortedProperly, "Products are not sorted properly.");
+        Assert.assertTrue(areSortedProperly, "Products are not sorted properly.");
     }
 
     @Test //TC3
@@ -33,7 +33,7 @@ public class ProductsListTest extends BaseTest {
 
         ProductsListPage productsListPage = new ProductsListPage(driver);
         int actualNumbersOfProductInComparisonList = productsListPage.header.goToMobileCategory().addProductsForComparison(xPathForFirstProduct, xPathForSecondProduct).checkNumbersOfProductsInComparisonList();
-        Assertions.assertEquals(expectedNumbersOfProductsInComparisonList, actualNumbersOfProductInComparisonList, "Expected numbers of items in comparison list are invalid.");
+        Assert.assertEquals(expectedNumbersOfProductsInComparisonList, actualNumbersOfProductInComparisonList, "Expected numbers of items in comparison list are invalid.");
     }
 
     @Test //TC3
@@ -46,7 +46,7 @@ public class ProductsListTest extends BaseTest {
 
         String productDetailPagePrice = productsDetailPage.getProductPrice();
 
-        Assertions.assertEquals(productDetailPagePrice, productsListPagePrice, "Expected prices are invalid.");
+        Assert.assertEquals(productDetailPagePrice, productsListPagePrice, "Expected prices are invalid.");
     }
 }
 
