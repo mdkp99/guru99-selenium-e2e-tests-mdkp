@@ -1,6 +1,6 @@
 import PageObjects.LoginPage;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         String actualErrorMessage = loginPage.header.goToLoginPage().inputLoginData(validEmail, invalidPass).getErrorMessage();
-        Assertions.assertEquals(expectedErrorMessage, actualErrorMessage, "Expected error message is invalid.");
+        Assert.assertEquals(expectedErrorMessage, actualErrorMessage, "Expected error message is invalid.");
     }
 
     @Test //TC2
@@ -27,14 +27,14 @@ public class LoginTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         String actualErrorMessage = loginPage.header.goToLoginPage().inputLoginData(invalidEmail, validPassword).getErrorMessage();
-        Assertions.assertEquals(expectedErrorMessage, actualErrorMessage, "Expected error message is invalid.");
+        Assert.assertEquals(expectedErrorMessage, actualErrorMessage, "Expected error message is invalid.");
     }
 
     @Test //TC3
     public void enterValidPasswordAndEmailTest() {
         LoginPage loginPage = new LoginPage(driver);
         String actualDashboardMessageText = loginPage.header.goToLoginPage().inputLoginData(validEmail, validPassword).getDashboardMessage();
-        Assertions.assertTrue(actualDashboardMessageText.contains(validEmail), "Expected dashboard message text is invalid.");
+        Assert.assertTrue(actualDashboardMessageText.contains(validEmail), "Expected dashboard message text is invalid.");
     }
 
     @Test //TC4
@@ -43,7 +43,7 @@ public class LoginTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         String actualValidationMessage = loginPage.header.goToLoginPage().inputLoginData("", "").getValidationAdvice();
-        Assertions.assertEquals(expectedValidationMessage, actualValidationMessage, "Expected validation message is invalid.");
+        Assert.assertEquals(expectedValidationMessage, actualValidationMessage, "Expected validation message is invalid.");
     }
 
     @Test //TC5
@@ -52,6 +52,6 @@ public class LoginTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         String actualValidationMessage = loginPage.header.goToLoginPage().inputLoginData(validEmail, invalidPassLessThanSixChar).getValidationAdvice();
-        Assertions.assertEquals(expectedValidationMessage, actualValidationMessage, "Expected validation message is invalid.");
+        Assert.assertEquals(expectedValidationMessage, actualValidationMessage, "Expected validation message is invalid.");
     }
 }
