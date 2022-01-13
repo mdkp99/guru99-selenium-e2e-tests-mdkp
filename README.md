@@ -2,7 +2,7 @@
 
 ## About
 
-Automated tests e-commerce platform (http://live.demoguru99.com/) with Java, Selenium WebDriver and Selenium Grid using Page Object Pattern.
+Automated tests e-commerce platform (http://live.techpanda.org) with Java, Selenium WebDriver and Selenium Grid using Page Object Pattern.
 
 ## Installation
 
