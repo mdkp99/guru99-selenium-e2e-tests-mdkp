@@ -1,0 +1,140 @@
+\hypertarget{class_page_objects_1_1_products_list_page}{}\doxysection{Page\+Objects.\+Products\+List\+Page Class Reference}
+\label{class_page_objects_1_1_products_list_page}\index{PageObjects.ProductsListPage@{PageObjects.ProductsListPage}}
+Inheritance diagram for Page\+Objects.\+Products\+List\+Page\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_page_objects_1_1_products_list_page}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_a8958ccbd104cb636d3587a88be934592}\label{class_page_objects_1_1_products_list_page_a8958ccbd104cb636d3587a88be934592}} 
+{\bfseries Products\+List\+Page} (Web\+Driver driver)
+\item 
+\mbox{\hyperlink{class_page_objects_1_1_products_list_page}{Products\+List\+Page}} \mbox{\hyperlink{class_page_objects_1_1_products_list_page_a09b5bbb9f94a852cff9e703a5069531b}{change\+Sort\+Type}} (String sort\+Type)
+\item 
+\mbox{\hyperlink{class_page_objects_1_1_products_list_page}{Products\+List\+Page}} \mbox{\hyperlink{class_page_objects_1_1_products_list_page_acf3e0f8e6c9ddd4977fcf1e17e9bbb61}{change\+Sorting\+Direction}} (String direction)
+\item 
+boolean \mbox{\hyperlink{class_page_objects_1_1_products_list_page_ad5a7f42b8f5af7a309aedfbbbbc9ac6c}{check\+If\+Products\+Are\+Sorted\+Properly}} (String sorting\+Direction, String sort\+By)
+\item 
+\mbox{\hyperlink{class_page_objects_1_1_products_list_page}{Products\+List\+Page}} \mbox{\hyperlink{class_page_objects_1_1_products_list_page_ad84bad2c2062ce51bd2be0b32f9991d6}{add\+Products\+For\+Comparison}} (String x\+Path\+For\+First\+Product, String x\+Path\+For\+Second\+Product)
+\item 
+int \mbox{\hyperlink{class_page_objects_1_1_products_list_page_aadecebe80a335853d2f0978d10a95f8a}{check\+Numbers\+Of\+Products\+In\+Comparison\+List}} ()
+\item 
+String \mbox{\hyperlink{class_page_objects_1_1_products_list_page_a712167cbfdf0a034ddc0d6b8e51cbe91}{get\+Product\+Price}} (int product\+ID)
+\item 
+\mbox{\hyperlink{class_page_objects_1_1_products_detail_page}{Products\+Detail\+Page}} \mbox{\hyperlink{class_page_objects_1_1_products_list_page_aec21e5096f422377d0608e00698e73b2}{go\+To\+Product\+Detail\+Page}} (String product\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_aba076bf38cc872efc5fe6fdc5e2ea5b7}\label{class_page_objects_1_1_products_list_page_aba076bf38cc872efc5fe6fdc5e2ea5b7}} 
+\mbox{\hyperlink{class_page_objects_1_1_header_page}{Header\+Page}} {\bfseries header}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_ad84bad2c2062ce51bd2be0b32f9991d6}\label{class_page_objects_1_1_products_list_page_ad84bad2c2062ce51bd2be0b32f9991d6}} 
+\index{PageObjects.ProductsListPage@{PageObjects.ProductsListPage}!addProductsForComparison@{addProductsForComparison}}
+\index{addProductsForComparison@{addProductsForComparison}!PageObjects.ProductsListPage@{PageObjects.ProductsListPage}}
+\doxysubsubsection{\texorpdfstring{addProductsForComparison()}{addProductsForComparison()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_page_objects_1_1_products_list_page}{Products\+List\+Page}} Page\+Objects.\+Products\+List\+Page.\+add\+Products\+For\+Comparison (\begin{DoxyParamCaption}\item[{String}]{x\+Path\+For\+First\+Product,  }\item[{String}]{x\+Path\+For\+Second\+Product }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is responsible for adding two prodcuts to comparison list based on xpath. 
+\begin{DoxyParams}{Parameters}
+{\em x\+Path\+For\+First\+Product} & -\/ xpath for 1st product \\
+\hline
+{\em x\+Path\+For\+Second\+Product} & -\/ xpath for 2nd product. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_acf3e0f8e6c9ddd4977fcf1e17e9bbb61}\label{class_page_objects_1_1_products_list_page_acf3e0f8e6c9ddd4977fcf1e17e9bbb61}} 
+\index{PageObjects.ProductsListPage@{PageObjects.ProductsListPage}!changeSortingDirection@{changeSortingDirection}}
+\index{changeSortingDirection@{changeSortingDirection}!PageObjects.ProductsListPage@{PageObjects.ProductsListPage}}
+\doxysubsubsection{\texorpdfstring{changeSortingDirection()}{changeSortingDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_page_objects_1_1_products_list_page}{Products\+List\+Page}} Page\+Objects.\+Products\+List\+Page.\+change\+Sorting\+Direction (\begin{DoxyParamCaption}\item[{String}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is responsible for changing type of sorting direction 
+\begin{DoxyParams}{Parameters}
+{\em direction} & -\/ asc, desc \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_a09b5bbb9f94a852cff9e703a5069531b}\label{class_page_objects_1_1_products_list_page_a09b5bbb9f94a852cff9e703a5069531b}} 
+\index{PageObjects.ProductsListPage@{PageObjects.ProductsListPage}!changeSortType@{changeSortType}}
+\index{changeSortType@{changeSortType}!PageObjects.ProductsListPage@{PageObjects.ProductsListPage}}
+\doxysubsubsection{\texorpdfstring{changeSortType()}{changeSortType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_page_objects_1_1_products_list_page}{Products\+List\+Page}} Page\+Objects.\+Products\+List\+Page.\+change\+Sort\+Type (\begin{DoxyParamCaption}\item[{String}]{sort\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is responsible for cchanging type of sorting products. 
+\begin{DoxyParams}{Parameters}
+{\em sort\+Type} & -\/ Name, Price, Position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_ad5a7f42b8f5af7a309aedfbbbbc9ac6c}\label{class_page_objects_1_1_products_list_page_ad5a7f42b8f5af7a309aedfbbbbc9ac6c}} 
+\index{PageObjects.ProductsListPage@{PageObjects.ProductsListPage}!checkIfProductsAreSortedProperly@{checkIfProductsAreSortedProperly}}
+\index{checkIfProductsAreSortedProperly@{checkIfProductsAreSortedProperly}!PageObjects.ProductsListPage@{PageObjects.ProductsListPage}}
+\doxysubsubsection{\texorpdfstring{checkIfProductsAreSortedProperly()}{checkIfProductsAreSortedProperly()}}
+{\footnotesize\ttfamily boolean Page\+Objects.\+Products\+List\+Page.\+check\+If\+Products\+Are\+Sorted\+Properly (\begin{DoxyParamCaption}\item[{String}]{sorting\+Direction,  }\item[{String}]{sort\+By }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is responsible for returning true if products are sorted property. 
+\begin{DoxyParams}{Parameters}
+{\em sorting\+Direction} & -\/ \char`\"{}asc\char`\"{}, \char`\"{}desc\char`\"{} \\
+\hline
+{\em sort\+By} & -\/ \char`\"{}\+Name\char`\"{}, \char`\"{}\+Price\char`\"{}, \char`\"{}\+Position\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_aadecebe80a335853d2f0978d10a95f8a}\label{class_page_objects_1_1_products_list_page_aadecebe80a335853d2f0978d10a95f8a}} 
+\index{PageObjects.ProductsListPage@{PageObjects.ProductsListPage}!checkNumbersOfProductsInComparisonList@{checkNumbersOfProductsInComparisonList}}
+\index{checkNumbersOfProductsInComparisonList@{checkNumbersOfProductsInComparisonList}!PageObjects.ProductsListPage@{PageObjects.ProductsListPage}}
+\doxysubsubsection{\texorpdfstring{checkNumbersOfProductsInComparisonList()}{checkNumbersOfProductsInComparisonList()}}
+{\footnotesize\ttfamily int Page\+Objects.\+Products\+List\+Page.\+check\+Numbers\+Of\+Products\+In\+Comparison\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method return numvers of products in comarision list. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_a712167cbfdf0a034ddc0d6b8e51cbe91}\label{class_page_objects_1_1_products_list_page_a712167cbfdf0a034ddc0d6b8e51cbe91}} 
+\index{PageObjects.ProductsListPage@{PageObjects.ProductsListPage}!getProductPrice@{getProductPrice}}
+\index{getProductPrice@{getProductPrice}!PageObjects.ProductsListPage@{PageObjects.ProductsListPage}}
+\doxysubsubsection{\texorpdfstring{getProductPrice()}{getProductPrice()}}
+{\footnotesize\ttfamily String Page\+Objects.\+Products\+List\+Page.\+get\+Product\+Price (\begin{DoxyParamCaption}\item[{int}]{product\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method return product price of received produdct id. 
+\begin{DoxyParams}{Parameters}
+{\em product\+ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_page_objects_1_1_products_list_page_aec21e5096f422377d0608e00698e73b2}\label{class_page_objects_1_1_products_list_page_aec21e5096f422377d0608e00698e73b2}} 
+\index{PageObjects.ProductsListPage@{PageObjects.ProductsListPage}!goToProductDetailPage@{goToProductDetailPage}}
+\index{goToProductDetailPage@{goToProductDetailPage}!PageObjects.ProductsListPage@{PageObjects.ProductsListPage}}
+\doxysubsubsection{\texorpdfstring{goToProductDetailPage()}{goToProductDetailPage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_page_objects_1_1_products_detail_page}{Products\+Detail\+Page}} Page\+Objects.\+Products\+List\+Page.\+go\+To\+Product\+Detail\+Page (\begin{DoxyParamCaption}\item[{String}]{product\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method return Product\+Detail\+Page of received product name 
+\begin{DoxyParams}{Parameters}
+{\em product\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Piotr/\+Desktop/\+Klasy/Products\+List\+Page.\+java\end{DoxyCompactItemize}
