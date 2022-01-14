@@ -2,6 +2,9 @@ import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+/**
+ * This method is responsible for all Login Page tests
+ */
 public class LoginTest extends BaseTest {
 
     // Test Data for Login Page
@@ -11,7 +14,10 @@ public class LoginTest extends BaseTest {
     private static final String invalidPass = "InvalidPassword!";
     private static final String invalidPassLessThanSixChar = "test";
 
-
+    /**
+     * This method is responsible for following test:
+     * Input invalid password and check validation message.
+     */
     @Test //TC1
     public void enterIncorrectPasswordTest() {
         String expectedErrorMessage = "Invalid login or password.";
@@ -21,6 +27,10 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage, "Expected error message is invalid.");
     }
 
+    /**
+     * This method is responsible for following test:
+     * Input invalid email and check validation message.
+     */
     @Test //TC2
     public void enterIncorrectEmailAddressTest() {
         String expectedErrorMessage = "Invalid login or password.";
@@ -30,6 +40,10 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage, "Expected error message is invalid.");
     }
 
+    /**
+     * This method is responsible for following test:
+     * Input valid login and password and then validate if dashboard message is valid.
+     */
     @Test //TC3
     public void enterValidPasswordAndEmailTest() {
         LoginPage loginPage = new LoginPage(driver);
@@ -37,6 +51,10 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(actualDashboardMessageText.contains(validEmail), "Expected dashboard message text is invalid.");
     }
 
+    /**
+     * This method is responsible for following test:
+     * User did not entered login and password and then check validation error message.
+     */
     @Test //TC4
     public void noEnteredLoginDataTest() {
         String expectedValidationMessage = "This is a required field.";
@@ -46,6 +64,10 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(expectedValidationMessage, actualValidationMessage, "Expected validation message is invalid.");
     }
 
+    /**
+     * This method is responsible for following test:
+     * User entered password with less than six chars and then check validation error message.
+     */
     @Test //TC5
     public void passwordWithLessThanSixCharactersTest() {
         String expectedValidationMessage = "Please enter 6 or more characters without leading or trailing spaces.";

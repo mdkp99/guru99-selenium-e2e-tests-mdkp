@@ -9,6 +9,10 @@ public class ProductsDetailTest extends BaseTest {
     private static final String productDetailURL = "http://live.demoguru99.com/index.php/mobile/iphone.html";
 
 
+    /**
+     * This method is responsible for following test:
+     * Verify that items can be added to card from product detail page.
+     */
     @Test //TC1
     public void itemCanBeAddedToCartFromProductDetailPageTest() {
         ProductsDetailPage productsDetailPage = new ProductsDetailPage(driver);
@@ -20,6 +24,10 @@ public class ProductsDetailTest extends BaseTest {
         Assert.assertTrue(productAddedProperly, "Product was not added properly to card.");
     }
 
+    /**
+     * This method is responsible for following test:
+     * User can add new review for product.
+     */
     @Test //TC2
     public void userCanAddNewReviewForProductTest() {
         ProductsDetailPage productsDetailPage = new ProductsDetailPage(driver);

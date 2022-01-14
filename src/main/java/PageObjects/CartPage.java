@@ -7,7 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * This class is responsible for containing methods related with CarPage.
+ *
+ */
 public class CartPage extends BasePage {
 
     // Locators list
@@ -17,6 +20,11 @@ public class CartPage extends BasePage {
         super(driver);
     }
 
+    /**
+     *
+     * @param productName - product name from list.
+     * @return
+     */
     public boolean checkIfProductWasAddedToCartProperly(String productName) {
         // Get list of items in cart
         List<WebElement> temporaryProductsList = driver.findElements(productsInCartLocator);

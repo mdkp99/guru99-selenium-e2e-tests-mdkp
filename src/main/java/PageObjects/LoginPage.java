@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This class is responsible for containing methods related with Login Page.
+ */
 public class LoginPage extends BasePage {
 
     private static final By loginLocator = By.cssSelector("#email");
@@ -23,6 +26,12 @@ public class LoginPage extends BasePage {
         header = new HeaderPage(driver);
     }
 
+    /**
+     * This method is responsible for input login and password on LoginPage.
+     * @param login - username login
+     * @param password - username password
+     * @return
+     */
     public LoginPage inputLoginData(String login, String password) {
         for (By by : Arrays.asList(loginLocator, passwordLocator)) {
             driver.findElement(by).clear();
@@ -33,10 +42,19 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    /**
+     * This method is responsible for returning Error Message as String.
+     * @return
+     */
     public String getErrorMessage() {
         return driver.findElement(errorMessageLocator).getText();
     }
 
+
+    /**
+     * This method is is responsible for returning validation error message as String.
+     * @return
+     */
     public String getValidationAdvice() {
         String validationAdvice = null;
         List<WebElement> validationAdviceList = driver.findElements(validationAdviceLocator);
@@ -46,6 +64,10 @@ public class LoginPage extends BasePage {
         return validationAdvice;
     }
 
+    /**
+     * This method is responsible for returning "Welcome" Dashboard message as String.
+     * @return
+     */
     public String getDashboardMessage() {
         return driver.findElement(dashboardWelcomeTextLocator).getText();
     }

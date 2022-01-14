@@ -4,6 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * This class is responsible for loading data from Utilities/config.properties file.
+ *
+ */
 public class PropertyManager {
 
     private static PropertyManager instance;

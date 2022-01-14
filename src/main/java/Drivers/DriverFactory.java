@@ -9,7 +9,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class DriverFactory {
+/**
+ * This class is responsible for managing drivers such as chromedriver or geckodriver.
+ */
+
+public class
+DriverFactory {
     WebDriver driver;
 
     private final String hubUrl = PropertyManager.getInstance().getHubUrl();

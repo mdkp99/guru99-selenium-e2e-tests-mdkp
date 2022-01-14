@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
+/**
+ * This class is responsible for containing methods related with Header Page.
+ */
 public class HeaderPage extends BasePage {
     WebDriverWait wait;
 
@@ -20,22 +22,37 @@ public class HeaderPage extends BasePage {
         wait = new WebDriverWait(driver, 10);
     }
 
+    /**
+     * This method is responsible for logging out user.
+     */
     public void logOut() {
         wait.until(ExpectedConditions.elementToBeClickable(accountButtonLocator)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(logOutLocator)).click();
     }
 
+    /**
+     * This method is responsible for clicking on Login Button to go to Login Page.
+     * @return
+     */
     public LoginPage goToLoginPage() {
         wait.until(ExpectedConditions.elementToBeClickable(accountButtonLocator)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginButtonLocator)).click();
         return new LoginPage(driver);
     }
 
+    /**
+     * this method is responsible to clicking on "Mobile" category on navbar.
+     * @return
+     */
     public ProductsListPage goToMobileCategory() {
         wait.until(ExpectedConditions.elementToBeClickable(mobileCategoryLocator)).click();
         return new ProductsListPage(driver);
     }
 
+    /**
+     * This method is responsible for clicking "TV" category on navbar.
+     * @return
+     */
     public ProductsListPage goToTvCategory() {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(tvCategoryLocator))).click();
         return new ProductsListPage(driver);

@@ -23,14 +23,22 @@ public class ProductsListPage extends BasePage {
         header = new HeaderPage(driver);
     }
 
-    // Method change type of sorting products. sortType: "Name", "Price", "Position"
+    /**
+     * This method is responsible for cchanging type of sorting products.
+     * @param sortType  - Name, Price, Position
+     * @return
+     */
     public ProductsListPage changeSortType(String sortType) {
         Select sortTypeSelect = new Select(driver.findElement(sortTypeLocator));
         sortTypeSelect.selectByVisibleText(sortType);
         return this;
     }
 
-    // Method change type of sorting direction. direction: "asc", "desc"
+    /**
+     * This method is responsible for changing type of sorting direction
+     * @param direction - asc, desc
+     * @return
+     */
     public ProductsListPage changeSortingDirection(String direction) {
         String type = driver.findElement(sortingDirectionLocator).getAttribute("Class");
         if (direction.equals("asc")) {
@@ -47,6 +55,12 @@ public class ProductsListPage extends BasePage {
         return this;
     }
 
+    /**
+     * This method is responsible for returning true if products are sorted property.
+     * @param sortingDirection - "asc", "desc"
+     * @param sortBy - "Name", "Price", "Position"
+     * @return
+     */
     // Method return true if products are sorted properly. sortingDirection: "asc", "desc", sortBy: "Name", "Price", "Position"
     public boolean checkIfProductsAreSortedProperly(String sortingDirection, String sortBy) {
         if (sortBy.equals("Name")) {
@@ -122,26 +136,42 @@ public class ProductsListPage extends BasePage {
         return false;
     }
 
-    // Method add two products with specific xpath to comparison list
+    /**
+     * This method is responsible for adding two prodcuts to comparison list based on xpath.
+     * @param xPathForFirstProduct - xpath for 1st product
+     * @param xPathForSecondProduct - xpath for 2nd product.
+     * @return
+     */
     public ProductsListPage addProductsForComparison(String xPathForFirstProduct, String xPathForSecondProduct) {
         driver.findElement(By.xpath(xPathForFirstProduct)).click();
         driver.findElement(By.xpath(xPathForSecondProduct)).click();
         return this;
     }
 
-    // Method return numbers of products in comparison list
+    /**
+     * This method return numvers of products in comarision list.
+     * @return
+     */
     public int checkNumbersOfProductsInComparisonList() {
         String tempNumbersOfItems = driver.findElement(numberOfItemsInList).getText();
         String numbersOfItems = tempNumbersOfItems.replace("(", "").replace(")", "");
         return Integer.parseInt(numbersOfItems);
     }
 
-    // Method return product price of received product id
+    /**
+     * This method return product price of received produdct id.
+     * @param productID
+     * @return
+     */
     public String getProductPrice(int productID) {
         return driver.findElement(By.cssSelector("span[id=\"product-price-"+productID+"\"]")).getText();
     }
 
-    // Method return ProductDetailPage of received product name
+    /**
+     * This method return ProductDetailPage of received product name
+     * @param productName
+     * @return
+     */
     public ProductsDetailPage goToProductDetailPage(String productName) {
         driver.findElements(By.cssSelector("a[title=\""+productName+"\"]"));
         return new ProductsDetailPage(driver);

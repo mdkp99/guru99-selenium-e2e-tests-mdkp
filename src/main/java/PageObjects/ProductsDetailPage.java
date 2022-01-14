@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * This method is responsible for containing methods related with ProductDetailPage.
+ */
 public class ProductsDetailPage extends BasePage {
 
     private static final By productPriceLocator = By.cssSelector(".price");
@@ -21,12 +24,19 @@ public class ProductsDetailPage extends BasePage {
         wait = new WebDriverWait(driver, 10);
     }
 
-    // Method return product price in product detail page
+    /**
+     * This method return product price as String.
+     * @return
+     */
     public String getProductPrice() {
         return driver.findElement(productPriceLocator).getText();
     }
 
-    // Method add product to cart in product detail page
+    /**
+     * This method in responsible for adding product to card.
+     * @param quantity - product quantity.
+     * @return
+     */
     public CartPage addProductToCart(String quantity) {
         driver.findElement(quantityLocator).clear();
         driver.findElement(quantityLocator).sendKeys(quantity);
@@ -34,12 +44,22 @@ public class ProductsDetailPage extends BasePage {
         return new CartPage(driver);
     }
 
-    // Method return product name in product detail page
+    /**
+     * This method is responsible for return product name as String.
+     * @return
+     */
     public String getProductName() {
         return driver.findElement(productNameLocator).getText();
     }
 
-    // Method add new review for product as not logged in user. rate: (1-5)
+    /**
+     * This method is responsible for adding new review on product details page.
+     * @param rate - 1-5
+     * @param thoughts - String max char 250.
+     * @param summary - String max char 250.
+     * @param nickname - customer username.
+     * @return
+     */
     public ProductsDetailPage addProductReview(int rate, String thoughts, String summary, String nickname) {
         driver.findElement(addNewReviewLocator).click();
         switch (rate) {

@@ -7,14 +7,20 @@ import org.testng.annotations.BeforeMethod;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Default test class serving for initialization @BeforeMethod and @AfterMethod
+ */
 public abstract class BaseTest {
     protected RemoteWebDriver driver;
 
-    public static final String baseURL = "http://live.demoguru99.com/";
+    private static final String baseURL = "http://live.techpanda.org";
+    private static final String browserType = PropertyManager.getInstance().getBrowserType();
 
-    private final String browserType = PropertyManager.getInstance().getBrowserType();
 
-
+    /**
+     * This method is performed before all tests.
+     * @throws MalformedURLException
+     */
     @BeforeMethod
     public void setUp() throws MalformedURLException {
         DriverFactory driverFactory = new DriverFactory();
@@ -23,6 +29,9 @@ public abstract class BaseTest {
         driver.get(baseURL);
     }
 
+    /**
+     * This method is performed after all tests.
+     */
     @AfterMethod
     public void tearDownDriver() {
         driver.quit();

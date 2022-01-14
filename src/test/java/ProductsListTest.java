@@ -12,7 +12,10 @@ public class ProductsListTest extends BaseTest {
     String xPathForSecondProduct = "//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[2]/div/div[3]/ul/li[2]/a";
 
 
-
+    /**
+     * This method is responsible for following test:
+     * Items can be sorted by Name in product list page.
+     */
     @Test //TC1
     public void itemsCanBeSortedByNameInProductsListPageTest() {
         ProductsListPage productsListPage = new ProductsListPage(driver);
@@ -20,6 +23,10 @@ public class ProductsListTest extends BaseTest {
         Assert.assertTrue(areSortedProperly, "Products are not sorted properly.");
     }
 
+    /**
+     * This method is responsible for following test:
+     * Items can be sorted by Price product list page.
+     */
     @Test //TC2
     public void itemsCanBeSortedByPriceInProductsListPageTest() {
         ProductsListPage productsListPage = new ProductsListPage(driver);
@@ -27,6 +34,10 @@ public class ProductsListTest extends BaseTest {
         Assert.assertTrue(areSortedProperly, "Products are not sorted properly.");
     }
 
+    /**
+     * This method is responsible for following test:
+     * Items can be added to comparison list in product list page.
+     */
     @Test //TC3
     public void itemsCanBeAddToComparisonListInProductListPageTest() {
         int expectedNumbersOfProductsInComparisonList = 2;
@@ -36,6 +47,10 @@ public class ProductsListTest extends BaseTest {
         Assert.assertEquals(expectedNumbersOfProductsInComparisonList, actualNumbersOfProductInComparisonList, "Expected numbers of items in comparison list are invalid.");
     }
 
+    /**
+     * This method is responsible for following test:
+     * Check if prices are equal in product list page and product page.
+     */
     @Test //TC3
     public void checkIfPricesAreEqualInProductListPageAndProductPage() {
         ProductsListPage productsListPage = new ProductsListPage(driver);
