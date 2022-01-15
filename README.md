@@ -8,7 +8,7 @@ Automated tests e-commerce platform (http://live.techpanda.org) with Java, Selen
 
 1. Clone the repository:
 ```
-gh repo clone madiukpiotr/Selenium-Tests-Guru99-Magento
+gh repo clone mdkp99/guru99-selenium-e2e-tests-mdkp
 ```
 
 ## Requirements
