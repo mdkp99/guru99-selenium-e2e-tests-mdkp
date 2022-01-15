@@ -58,9 +58,10 @@ public class ProductsListTest extends BaseTest {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         ProductsDetailPage productsDetailPage = new ProductsDetailPage(driver);
 
-        String productsListPagePrice = productsListPage.header.goToMobileCategory().getProductPrice(1);
-        productsListPage.goToProductDetailPage("Sony Xperia");
+        String productsListPagePrice = productsListPage.header.goToMobileCategory().getProductPrice(2);
+        productsListPage.goToProductDetailPage("Iphone");
 
+        driver.get("http://live.techpanda.org/index.php/mobile/iphone.html");
         String productDetailPagePrice = productsDetailPage.getProductPrice();
 
         Assert.assertEquals(productDetailPagePrice, productsListPagePrice, "Expected prices are invalid.");
