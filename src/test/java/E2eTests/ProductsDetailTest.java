@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class ProductsDetailTest extends BaseTest {
 
     // Test Data
-    private static final String productDetailURL = "http://live.demoguru99.com/index.php/mobile/iphone.html";
+    private static final String productDetailURL = "http://live.techpanda.org/index.php/mobile/iphone.html";
 
 
     /**
