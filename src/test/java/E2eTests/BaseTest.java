@@ -1,3 +1,5 @@
+package E2eTests;
+
 import Drivers.DriverFactory;
 import Utilities.PropertyManager;
 import org.openqa.selenium.remote.RemoteWebDriver;

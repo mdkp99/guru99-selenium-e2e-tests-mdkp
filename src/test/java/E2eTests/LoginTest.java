@@ -1,3 +1,5 @@
+package E2eTests;
+
 import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;

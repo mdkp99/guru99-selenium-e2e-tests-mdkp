@@ -1,3 +1,5 @@
+package E2eTests;
+
 import PageObjects.ProductsDetailPage;
 import PageObjects.ProductsListPage;
 import org.testng.Assert;
