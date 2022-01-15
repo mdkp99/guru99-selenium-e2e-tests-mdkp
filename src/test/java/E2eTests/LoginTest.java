@@ -50,7 +50,7 @@ public class LoginTest extends BaseTest {
     public void enterValidPasswordAndEmailTest() {
         LoginPage loginPage = new LoginPage(driver);
         String actualDashboardMessageText = loginPage.header.goToLoginPage().inputLoginData(validEmail, validPassword).getDashboardMessage();
-        Assert.assertTrue(actualDashboardMessageText.contains(validEmail), "Expected dashboard message text is invalid.");
+        Assert.assertTrue(actualDashboardMessageText.contains("Peter Tester AZSD"), "Expected dashboard message text is invalid.");
     }
 
     /**
